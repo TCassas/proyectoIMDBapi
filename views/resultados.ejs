@@ -1,0 +1,17 @@
+<%- include("partials/header"); %>
+
+<main id="mainResultados" class="container">
+	<h1><u>Resultados</u></h1>
+	<% data["Search"].forEach(function(movie) { %>
+		<article class="articuloResultado">
+			<div class="imgResultado">
+				<img src=<%= movie.Poster; %>>
+			</div>
+			<div class="infoResultado">
+				<a href=<%= "resultado/?busqueda=" + movie.imdbID %>><b><%= movie.Title %></b> <span>(<%= movie.Year %>)</span></a>
+				<p class="tipoResultado"><%= movie.Type.charAt(0).toUpperCase() + movie.Type.slice(1) %></p>
+			</div>
+		</article>
+	<% }); %>
+
+<%- include("partials/header"); %>

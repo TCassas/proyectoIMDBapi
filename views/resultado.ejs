@@ -1,0 +1,66 @@
+<%- include("partials/header"); %>
+
+<main id="mainResultado">
+  <section id="nombreYPuntuacion" class="container">
+    <article class="titulo">
+      <p><%= data.Title %></p>
+    </article>
+    <article class="rating">
+      <p><%= data.imdbRating %></p>
+    </article>
+  </section>
+  <section id="infoPrincipalObra" class="container">
+    <article class="infoIzquierda">
+      <img src="<%= data.Poster %>" alt="">
+    </article>
+    <article class="infoDerecha">
+      <p><span>Fecha:</span> <%= data.Released %></p>
+      <p><span>Duración:</span> <%= data.Runtime %></p>
+      <p><span>Director:</span> <%= data.Director %></p>
+      <p><span>Escritor:</span> <%= data.Writer %></p>
+    </article>
+  </section>
+  <section id="infoCompleta">
+    <div class="container">
+      <h2>Detalles</h2>
+      <article class="grupoDatoValor container" >
+        <p class="dato">Trama:</p>
+        <p class="valor"><%= data.Plot %></p>
+      </article>
+      <article class="grupoDatoValor container" >
+        <p class="dato">País:</p>
+        <p class="valor"><%= data.Country %></p>
+      </article>
+      <article class="grupoDatoValor container" >
+        <p class="dato">Lenguaje:</p>
+        <p class="valor"><%= data.Language %></p>
+      </article>
+      <article class="grupoDatoValor container" >
+        <p class="dato">Generos:</p>
+        <p class="valor"><%= data.Genre %></p>
+      </article>
+      <article class="grupoDatoValor container" >
+        <p class="dato">Temporadas:</p>
+        <p class="valor"><%= data.totalSeasons %></p>
+      </article>
+      <article class="grupoDatoValor container" >
+        <p class="dato">Premios:</p>
+        <p class="valor"><%= data.Awards %></p>
+      </article>
+      <article class="grupoDatoValor container" >
+        <p class="dato">Actores:</p>
+        <p class="valor"><%= data.Actors %></p>
+      </article>
+    </div>
+    <article class="otrasPuntuaciones">
+      <div class="container">
+        <p>Otras puntuaciones</p>
+        <ul>
+          <% data.Ratings.forEach(function (movie) { %>
+            <li><%= movie.Source %> - <%= movie.Value %></li>
+            <% }); %>
+          </ul>
+      </div>
+    </article>
+  </section>
+</main>
