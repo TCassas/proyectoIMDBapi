@@ -65,7 +65,9 @@ app.get('/resultado', function(req, res) {
 	});
 });
 
+let port = process.env.PORT || 3000;
 
-app.listen(3000, function() {
+
+app.listen(port, function() {
 	console.log("Servidor encendido correctamente!");
 });
