@@ -150,19 +150,19 @@ u {
   padding: 10px 20px;
   width: 88%;
   font-weight: 900;
-  font-size: 3vw;
+  font-size: 2em;
 }
 
 #nombreYPuntuacion .rating {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 20px;
+  padding: 0 50px;
   border: 10px solid black;
   background-color: black;
   color: #ECF658;
   width: 12%;
-  font-size: 6vw;
+  font-size: 3em;
 }
 
 #infoPrincipalObra {
@@ -191,7 +191,7 @@ u {
 }
 
 .infoDerecha p {
-  font-size: 3.2vw;
+  font-size: 2em;
   font-weight: 400;
   width: 100%;
 }
@@ -287,6 +287,10 @@ article.grupoDatoValor:nth-last-of-type(1) {
 
   .infoDerecha {
     width: 100%;
+  }
+
+  .infoDerecha p {
+    font-size: 1.5em;
   }
 }
 

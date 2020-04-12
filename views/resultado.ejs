@@ -14,47 +14,51 @@
       <img src="<%= data.Poster %>" alt="">
     </article>
     <article class="infoDerecha">
-      <p><span>Fecha:</span> <%= data.Released %></p>
-      <p><span>Duración:</span> <%= data.Runtime %></p>
+      <p><span>Date:</span> <%= data.Released %></p>
+      <p><span>Duration:</span> <%= data.Runtime %></p>
       <p><span>Director:</span> <%= data.Director %></p>
-      <p><span>Escritor:</span> <%= data.Writer %></p>
+      <p><span>Writer:</span> <%= data.Writer %></p>
     </article>
   </section>
   <section id="infoCompleta">
     <div class="container">
       <h2>Detalles</h2>
       <article class="grupoDatoValor container" >
-        <p class="dato">Trama:</p>
+        <p class="dato">Plot:</p>
         <p class="valor"><%= data.Plot %></p>
       </article>
       <article class="grupoDatoValor container" >
-        <p class="dato">País:</p>
+        <p class="dato">Country:</p>
         <p class="valor"><%= data.Country %></p>
       </article>
       <article class="grupoDatoValor container" >
-        <p class="dato">Lenguaje:</p>
+        <p class="dato">Language:</p>
         <p class="valor"><%= data.Language %></p>
       </article>
       <article class="grupoDatoValor container" >
-        <p class="dato">Generos:</p>
+        <p class="dato">Genres:</p>
         <p class="valor"><%= data.Genre %></p>
       </article>
       <article class="grupoDatoValor container" >
-        <p class="dato">Temporadas:</p>
-        <p class="valor"><%= data.totalSeasons %></p>
+        <p class="dato">Seasons:</p>
+        <% if(data.totalSeasons) { %>
+          <p class="valor"><%= data.totalSeasons %></p>
+        <% } else { %>
+          <p class="valor">None</p>
+        <% }%>
       </article>
       <article class="grupoDatoValor container" >
-        <p class="dato">Premios:</p>
+        <p class="dato">Awards:</p>
         <p class="valor"><%= data.Awards %></p>
       </article>
       <article class="grupoDatoValor container" >
-        <p class="dato">Actores:</p>
+        <p class="dato">Actors:</p>
         <p class="valor"><%= data.Actors %></p>
       </article>
     </div>
     <article class="otrasPuntuaciones">
       <div class="container">
-        <p>Otras puntuaciones</p>
+        <p>Other ratings</p>
         <ul>
           <% data.Ratings.forEach(function (movie) { %>
             <li><%= movie.Source %> - <%= movie.Value %></li>
